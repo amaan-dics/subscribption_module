@@ -1,0 +1,920 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <template id="home_page_template" inherit_id="website.homepage" name="Home page Template">
+        <xpath expr="//div[@id='wrap']" position="replace">
+            <div id="wrap">
+                <section id="hero" class="hero">
+                    <div class="hero-eyebrow">Demo Tagline Goes Here</div>
+                    <div class="hero-content">
+                        <div class="hero-arabic-big">عنوان رئيسي</div>
+                        <div class="hero-bg"/>
+                        <div class="hero-geo"/>
+                        <h1>Demo.
+                            <br/>
+                            <em>Heading.</em>
+                            Here.
+                        </h1>
+                        <p class="hero-sub">This is a placeholder hero description. Replace this with your actual
+                            content
+                            describing what this platform is about and who it serves.
+                        </p>
+                        <div class="hero-actions">
+                            <a href="#learn" class="btn btn-gold">Begin Learning</a>
+                            <a href="/match" class="btn btn-ghost">Find a Match</a>
+                        </div>
+                        <div class="hero-stats">
+                            <div>
+                                <span class="hstat-n">1,400+</span>
+                                <span class="hstat-l">Demo Stat One</span>
+                            </div>
+                            <div>
+                                <span class="hstat-n">3</span>
+                                <span class="hstat-l">Demo Stat Two</span>
+                            </div>
+                            <div>
+                                <span class="hstat-n">4</span>
+                                <span class="hstat-l">Demo Stat Three</span>
+                            </div>
+                            <div>
+                                <span class="hstat-n">4</span>
+                                <span class="hstat-l">Demo Stat Four</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section id="learn" class="learn">
+                    <div class="learn-row">
+                        <div>
+                            <div class="sl">Foundation</div>
+                            <h2 class="st">What is
+                                <em>This Section?</em>
+                            </h2>
+                            <div class="rule"/>
+                        </div>
+                        <p>This is a demo paragraph for the Learn section. Replace this text with your actual content
+                            explaining the foundation or background of your platform. Keep it informative and concise.
+                        </p>
+                    </div>
+                    <div class="lcards">
+                        <div class="lcard rev vis">
+                            <div class="lcard-i">📖</div>
+                            <h3>Demo Card One</h3>
+                            <p>Placeholder description for card one. Replace with your actual feature or topic
+                                explanation.
+                            </p>
+                        </div>
+                        <div class="lcard rev vis">
+                            <div class="lcard-i">🕌</div>
+                            <h3>Demo Card Two</h3>
+                            <p>Placeholder description for card two. Replace with your actual feature or topic
+                                explanation.
+                            </p>
+                        </div>
+                        <div class="lcard rev vis">
+                            <div class="lcard-i">⚖️</div>
+                            <h3>Demo Card Three</h3>
+                            <p>Placeholder description for card three. Replace with your actual feature or topic
+                                explanation.
+                            </p>
+                        </div>
+                        <div class="lcard rev vis">
+                            <div class="lcard-i">👶</div>
+                            <h3>Demo Card Four</h3>
+                            <p>Placeholder description for card four. Replace with your actual feature or topic
+                                explanation.
+                            </p>
+                        </div>
+                        <div class="lcard rev vis">
+                            <div class="lcard-i">⏳</div>
+                            <h3>Demo Card Five</h3>
+                            <p>Placeholder description for card five. Replace with your actual feature or topic
+                                explanation.
+                            </p>
+                        </div>
+                        <div class="lcard rev vis">
+                            <div class="lcard-i">👥</div>
+                            <h3>Demo Card Six</h3>
+                            <p>Placeholder description for card six. Replace with your actual feature or topic
+                                explanation.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+                <section id="conditions" class="conditions">
+                    <div style="max-width:1100px;margin:0 auto;">
+                        <div class="sl" style="color:#e0b84a;">Requirements</div>
+                        <h2 class="st lt">Conditions of
+                            <em>Validity</em>
+                        </h2>
+                        <div class="rule"/>
+                        <p style="color:rgba(255,255,255,0.42);max-width:520px;margin-bottom:2.3rem;font-size:1.1rem;">
+                            Demo intro text for the conditions section. Replace this with your actual requirements or
+                            conditions.
+                        </p>
+                    </div>
+                    <div class="cgrid">
+                        <div class="ccard rev vis">
+                            <div class="cnum">01</div>
+                            <h4>Condition One</h4>
+                            <p>Demo description for condition one. Replace with your actual content here.</p>
+                        </div>
+                        <div class="ccard rev vis">
+                            <div class="cnum">02</div>
+                            <h4>Condition Two</h4>
+                            <p>Demo description for condition two. Replace with your actual content here.</p>
+                        </div>
+                        <div class="ccard rev vis">
+                            <div class="cnum">03</div>
+                            <h4>Condition Three</h4>
+                            <p>Demo description for condition three. Replace with your actual content here.</p>
+                        </div>
+                        <div class="ccard rev vis">
+                            <div class="cnum">04</div>
+                            <h4>Condition Four</h4>
+                            <p>Demo description for condition four. Replace with your actual content here.</p>
+                        </div>
+                        <div class="ccard rev vis">
+                            <div class="cnum">05</div>
+                            <h4>Condition Five</h4>
+                            <p>Demo description for condition five. Replace with your actual content here.</p>
+                        </div>
+                        <div class="ccard rev vis">
+                            <div class="cnum">06</div>
+                            <h4>Condition Six</h4>
+                            <p>Demo description for condition six. Replace with your actual content here.</p>
+                        </div>
+                    </div>
+                </section>
+                <section id="scholars" class="scholars">
+                    <div class="sinner">
+                        <div class="sl">Scholarly Opinion</div>
+                        <h2 class="st">What the
+                            <em>Experts Say</em>
+                        </h2>
+                        <div class="rule"/>
+                        <div class="qb rev vis">
+                            <blockquote>This is a demo quote or ruling. Replace this placeholder with an actual quote
+                                from a relevant authority or expert for your platform.
+                            </blockquote>
+                            <div class="qb-s">Demo Authority — Source Reference · website.com</div>
+                        </div>
+                        <div class="qb rev vis">
+                            <blockquote>Another demo quote goes here. Use real quotes from credible sources to build
+                                trust and authority with your audience.
+                            </blockquote>
+                            <div class="qb-s">Second Authority — Source Reference · website.com</div>
+                        </div>
+                        <div class="qb rev vis">
+                            <blockquote>A third demo quote can go here. Replace all three placeholders with actual
+                                scholarly or expert opinions relevant to your content.
+                            </blockquote>
+                            <div class="qb-s">Third Authority — Source Reference · website.com</div>
+                        </div>
+                        <p style="color:#6b7a5e;font-size:0.85rem;margin-top:1.3rem;padding:1rem;border:1px solid rgba(0,0,0,0.06);line-height:1.8;">
+                            <strong>Note:</strong>
+                            This is a demo note. Replace with your actual disclaimer or source attribution text. See
+                            <a href="/" style="color: #c49a2e;">References ↓</a>
+                        </p>
+                    </div>
+                </section>
+                <section id="iddah" class="iddah">
+                    <div style="max-width:1100px;margin:0 auto;">
+                        <div class="sl">Important Period</div>
+                        <h2 class="st">The
+                            <em>Waiting Period</em>
+                        </h2>
+                        <div class="rule"/>
+                        <p style="color:#6b7a5e;max-width:600px;margin-bottom:0.3rem;font-size:0.93rem;">Demo intro
+                            text for this section. Replace with your actual description of the waiting period rules and
+                            their importance.
+                        </p>
+                        <div class="igrid">
+                            <div class="icard rev vis">
+                                <div class="icard-h">
+                                    <div class="inum">1</div>
+                                    <h4>Case One Title</h4>
+                                </div>
+                                <p>Demo description for case one. Explain the scenario and its rules clearly. Replace
+                                    this placeholder text with your actual content.
+                                </p>
+                                <div class="iex">
+                                    <strong>Example:</strong>
+                                    Demo example text for case one. Replace with a real-world illustration of this
+                                    scenario.
+                                </div>
+                            </div>
+                            <div class="icard rev vis">
+                                <div class="icard-h">
+                                    <div class="inum">2</div>
+                                    <h4>Case Two Title</h4>
+                                </div>
+                                <p>Demo description for case two. Explain the scenario and its rules clearly. Replace
+                                    this placeholder text with your actual content.
+                                </p>
+                                <div class="iex">
+                                    <strong>Example:</strong>
+                                    Demo example text for case two. Replace with a real-world illustration of this
+                                    scenario.
+                                </div>
+                            </div>
+                            <div class="icard rev vis">
+                                <div class="icard-h">
+                                    <div class="inum">3</div>
+                                    <h4>Case Three Title</h4>
+                                </div>
+                                <p>Demo description for case three. Explain the scenario and its rules clearly. Replace
+                                    this placeholder text with your actual content.
+                                </p>
+                                <div class="iex">
+                                    <strong>Note:</strong>
+                                    Demo note for case three. Replace with relevant additional information.
+                                </div>
+                            </div>
+                            <div class="icard rev vis">
+                                <div class="icard-h">
+                                    <div class="inum">4</div>
+                                    <h4>Case Four Title</h4>
+                                </div>
+                                <p>Demo description for case four. Explain the scenario and its rules clearly. Replace
+                                    this placeholder text with your actual content.
+                                </p>
+                                <div class="iex">
+                                    <strong>Note:</strong>
+                                    Demo note for case four. Replace with relevant additional information.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="inote rev vis">
+                            <strong>Important Note:</strong>
+                            Demo important notice text. Replace this with your actual critical information or reminder
+                            that applies to all cases in this section.
+                        </div>
+                        <p style="color:#6b7a5e;font-size:0.78rem;margin-top:1.3rem;max-width:660px;line-height:1.8;">
+                            Demo footnote text. Replace with actual guidance about special cases. See
+                            <a href="#marjas" style="color:#c49a2e;">References ↓</a>
+                        </p>
+                    </div>
+                </section>
+                <section id="marjas" class="marjas">
+                    <div style="max-width:1100px;margin:0 auto;">
+                        <div class="sl" style="color:#d3aa39;">Primary Sources</div>
+                        <h2 class="st lt">Key
+                            <em>References</em>
+                        </h2>
+                        <div class="rule"/>
+                        <p style="color:rgba(255,255,255,0.4);max-width:540px;margin-bottom:2.3rem;font-size:0.88rem;">
+                            Demo intro text. Replace with a note encouraging users to verify information from primary
+                            sources before proceeding.
+                        </p>
+                        <div class="mgrid">
+                            <div class="mcard rev vis">
+                                <div class="marc">مرجع أول</div>
+                                <h4>Reference One</h4>
+                                <div class="msub">Demo Title · Location · website.com</div>
+                                <a class="ml" href="#" target="_blank" rel="noopener">↗ Demo Link One — Description
+                                    here
+                                </a>
+                                <a class="ml" href="#" target="_blank" rel="noopener">↗ Demo Link Two — Description
+                                    here
+                                </a>
+                                <a class="ml" href="#" target="_blank" rel="noopener">↗ Demo Link Three — Description
+                                    here
+                                </a>
+                            </div>
+                            <div class="mcard rev vis">
+                                <div class="marc">مرجع ثاني</div>
+                                <h4>Reference Two</h4>
+                                <div class="msub">Demo Title · Location · website.com</div>
+                                <a class="ml" href="#" target="_blank" rel="noopener">↗ Demo Link One — Description
+                                    here
+                                </a>
+                                <a class="ml" href="#" target="_blank" rel="noopener">↗ Demo Link Two — Description
+                                    here
+                                </a>
+                            </div>
+                            <div class="mcard rev vis">
+                                <div class="marc">مرجع ثالث</div>
+                                <h4>Reference Three</h4>
+                                <div class="msub">Demo Title · Location · website.com</div>
+                                <a class="ml" href="#" target="_blank" rel="noopener">↗ Demo Link One — Description
+                                    here
+                                </a>
+                                <a class="ml" href="#" target="_blank" rel="noopener">↗ Demo Link Two — Description
+                                    here
+                                </a>
+                                <a class="ml" href="#" target="_blank" rel="noopener">↗ Demo Link Three — Description
+                                    here
+                                </a>
+                            </div>
+                            <div class="mcard ask-card rev vis">
+                                <div style="font-size:1.8rem;color: #c49a2e;margin-bottom:0.7rem;">✉</div>
+                                <h4>Ask an Expert Directly</h4>
+                                <p>Demo text. Replace with your actual call-to-action encouraging users to contact an
+                                    expert or authority for personal guidance.
+                                </p>
+                                <a href="#" target="_blank" rel="noopener" class="btn btn-gold"
+                                   style="font-size:0.72rem;padding:0.65rem 1.1rem;letter-spacing:0.1em;text-align:center;">
+                                    Contact an Expert ↗
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section id="connect" class="connect">
+                    <div class="sl" style="color: #d3aa39;">Matchmaking</div>
+                    <h2 class="st lt">Connect with
+                        <em>Intention</em>
+                    </h2>
+                    <div class="rule"/>
+                    <p style="color:rgba(255,255,255,0.42);max-width:520px;margin-bottom:2.2rem;font-size:0.88rem;">Demo
+                        intro text for the Connect section. Replace with your actual description of the matchmaking
+                        process and platform values.
+                    </p>
+                    <div class="tabs">
+                        <a href="/" class="btn btn-active">Create Profile</a>
+                        <a href="/match" class="btn btn-not-active">Browse Profiles</a>
+                    </div>
+
+                    <div class="tab-content active" id="tab-register">
+                        <div class="fgrid">
+                            <div class="fg">
+                                <label>First Name</label>
+                                <input type="text" placeholder="Your name"/>
+                            </div>
+                            <div class="fg">
+                                <label>Age</label>
+                                <input type="number" placeholder="25" min="18"/>
+                            </div>
+                            <div class="fg">
+                                <label>Gender</label>
+                                <select>
+                                    <option value="">Select</option>
+                                    <option>Option One</option>
+                                    <option>Option Two</option>
+                                </select>
+                            </div>
+                            <div class="fg">
+                                <label>City / Country</label>
+                                <input type="text" placeholder="e.g. Mumbai, India"/>
+                            </div>
+                            <div class="fg">
+                                <label>Demo Field One</label>
+                                <select>
+                                    <option value="">Select Option</option>
+                                    <option>Choice A</option>
+                                    <option>Choice B</option>
+                                    <option>Choice C</option>
+                                </select>
+                            </div>
+                            <div class="fg">
+                                <label>Demo Field Two</label>
+                                <select>
+                                    <option value="">Select Option</option>
+                                    <option>Short-term</option>
+                                    <option>Medium-term</option>
+                                    <option>Long-term</option>
+                                </select>
+                            </div>
+                            <div class="fg full">
+                                <label>About Yourself</label>
+                                <textarea placeholder="Describe yourself and your intentions here..."/>
+                            </div>
+                            <div class="fg full">
+                                <label>Email</label>
+                                <input type="email" placeholder="your@email.com"/>
+                            </div>
+                            <div class="fdecl">
+                                <strong>Declaration:</strong>
+                                Demo declaration text. Replace with your actual terms that users must agree to before
+                                submitting their profile.
+                            </div>
+                            <div class="fg full">
+                                <button class="btn btn-gold">
+                                    Submit Profile
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="tab-browse">
+                        <p style="color:rgba(255,255,255,0.35);font-size:0.83rem;margin-bottom:1.1rem;">Demo browse
+                            intro text. Replace with your actual instructions for browsing profiles and membership
+                            requirements.
+                        </p>
+                        <div class="frow">
+                            <select id="f-loc" onchange="applyFilters()">
+                                <option value="">All Locations</option>
+                                <option value="iran">Location A</option>
+                                <option value="iraq">Location B</option>
+                                <option value="pakistan">Location C</option>
+                                <option value="india">Location D</option>
+                                <option value="uk">Location E</option>
+                            </select>
+                            <select id="f-age" onchange="applyFilters()">
+                                <option value="">Any Age</option>
+                                <option value="18-25">18–25</option>
+                                <option value="26-35">26–35</option>
+                                <option value="36-45">36–45</option>
+                                <option value="46+">46+</option>
+                            </select>
+                            <select id="f-dur" onchange="applyFilters()">
+                                <option value="">Any Duration</option>
+                                <option value="short">Short-term</option>
+                                <option value="medium">Medium-term</option>
+                                <option value="long">Long-term</option>
+                            </select>
+                            <select id="f-marja" onchange="applyFilters()">
+                                <option value="">Any Category</option>
+                                <option value="sistani">Category A</option>
+                                <option value="khamenei">Category B</option>
+                                <option value="al-hakeem">Category C</option>
+                            </select>
+                        </div>
+
+                        <div class="dist-bar" id="dist-bar-free" style="cursor:pointer;">
+                            <div style="display:flex;align-items:center;gap:0.7rem;flex:1;flex-wrap:wrap;">
+                                <span style="font-size:1.1rem;">📍</span>
+                                <div>
+                                    <div style="font-size:0.78rem;color:rgba(255,255,255,0.7);font-weight:500;letter-spacing:0.05em;">
+                                        Nearby Members Filter
+                                    </div>
+                                    <div style="font-size:0.72rem;color:rgba(255,255,255,0.35);margin-top:0.1rem;">Find
+                                        members within your chosen distance radius
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="display:flex;align-items:center;gap:0.6rem;background:rgba(196,154,46,0.1);border:1px solid rgba(196,154,46,0.3);padding:0.45rem 1rem;cursor:pointer;">
+                                <span style="font-size:0.75rem; color: #d3aa39; letter-spacing:0.08em; text-transform:uppercase;">
+                                    🔒 Silver+ Feature
+                                </span>
+                            </div>
+                        </div>
+                        <div class="dist-bar" id="dist-bar-active" style="display:none;">
+                            <button class="geo-btn">📍 Use My Location</button>
+                            <div class="geo-status">
+                                <div class="geo-dot" id="geo-dot"/>
+                                <span id="geo-label">Location not detected</span>
+                            </div>
+                            <label>Distance</label>
+                            <input type="range" class="dist-slider" id="dist-slider" min="10" max="20000" step="10"
+                                   value="20000" oninput="updateDist(this.value)" disabled=""/>
+                            <span class="dist-value" id="dist-value">Any distance</span>
+                        </div>
+
+                        <div class="pgrid" id="profiles-grid">
+                            <div class="pcard rev" data-lat="35.6892" data-lng="51.3890" data-loc="iran" data-age="28"
+                                 data-ageband="26-35" data-dur="medium" data-marja="sistani">
+                                <div class="pdot"/>
+                                <div class="pav">A</div>
+                                <h4>Demo Member One</h4>
+                                <div class="pmeta">28 · Demo City, Country</div>
+                                <div class="pdist"/>
+                                <div class="pbio">Demo bio text for member one. Replace with actual member profile
+                                    content.
+                                </div>
+                                <div class="ptags">
+                                    <span class="ptag">Tag A</span>
+                                    <span class="ptag">Tag B</span>
+                                    <span class="ptag">3–6 months</span>
+                                </div>
+                            </div>
+                            <div class="pcard rev" data-lat="24.8607" data-lng="67.0011" data-loc="pakistan"
+                                 data-age="32" data-ageband="26-35" data-dur="long" data-marja="khamenei">
+                                <div class="pav">B</div>
+                                <h4>Demo Member Two</h4>
+                                <div class="pmeta">32 · Demo City, Country</div>
+                                <div class="pdist"/>
+                                <div class="pbio">Demo bio text for member two. Replace with actual member profile
+                                    content.
+                                </div>
+                                <div class="ptags">
+                                    <span class="ptag">Tag A</span>
+                                    <span class="ptag">Tag C</span>
+                                    <span class="ptag">6–12 months</span>
+                                </div>
+                            </div>
+                            <div class="pcard rev" data-lat="51.5074" data-lng="-0.1278" data-loc="uk" data-age="25"
+                                 data-ageband="18-25" data-dur="long" data-marja="al-hakeem">
+                                <div class="pdot"/>
+                                <div class="pav">C</div>
+                                <h4>Demo Member Three</h4>
+                                <div class="pmeta">25 · Demo City, Country</div>
+                                <div class="pdist"/>
+                                <div class="pbio">Demo bio text for member three. Replace with actual member profile
+                                    content.
+                                </div>
+                                <div class="ptags">
+                                    <span class="ptag">Tag B</span>
+                                    <span class="ptag">Open</span>
+                                </div>
+                            </div>
+                            <div class="pcard locked rev" data-lat="32.0285" data-lng="44.3286" data-loc="iraq"
+                                 data-age="38" data-ageband="36-45" data-dur="long" data-marja="sistani">
+                                <div class="pav">D</div>
+                                <h4>Demo Member Four</h4>
+                                <div class="pmeta">38 · Demo City, Country</div>
+                                <div class="pdist"/>
+                                <div class="pbio">Locked profile demo text.</div>
+                                <div class="ptags">
+                                    <span class="ptag">Tag A</span>
+                                </div>
+                                <div class="lock-over">🔒 Gold+ Only</div>
+                            </div>
+                            <div class="pcard locked rev" data-lat="25.2048" data-lng="55.2708" data-loc="iran"
+                                 data-age="30" data-ageband="26-35" data-dur="medium" data-marja="al-hakeem">
+                                <div class="pdot"/>
+                                <div class="pav">E</div>
+                                <h4>Demo Member Five</h4>
+                                <div class="pmeta">30 · Demo City, Country</div>
+                                <div class="pdist"/>
+                                <div class="pbio">Locked profile demo text.</div>
+                                <div class="ptags">
+                                    <span class="ptag">Tag C</span>
+                                </div>
+                                <div class="lock-over">🔒 Gold+ Only</div>
+                            </div>
+                            <div class="pcard locked rev" data-lat="43.6532" data-lng="-79.3832" data-loc="uk"
+                                 data-age="29" data-ageband="26-35" data-dur="long" data-marja="sistani">
+                                <div class="pav">F</div>
+                                <h4>Demo Member Six</h4>
+                                <div class="pmeta">29 · Demo City, Country</div>
+                                <div class="pdist"/>
+                                <div class="pbio">Locked profile demo text.</div>
+                                <div class="ptags">
+                                    <span class="ptag">Tag B</span>
+                                </div>
+                                <div class="lock-over">🔒 Gold+ Only</div>
+                            </div>
+                        </div>
+                        <div class="no-results" id="no-results">No profiles match your current filters. Try widening the
+                            distance or adjusting other criteria.
+                        </div>
+                        <p style="margin-top:1.4rem;font-size:0.76rem;color:rgba(255,255,255,0.22);">🔒 3 profiles locked
+                            — <a href="#pricing" style="color:#d3aa39;">Upgrade to Gold or above</a> to unlock all
+                            profiles.
+                        </p>
+                    </div>
+                </section>
+                <section id="pricing" class="pricing">
+                    <div style="text-align:center;max-width:580px;margin:0 auto 3.2rem;">
+                        <div class="sl">Membership Plans</div>
+                        <h2 class="st">Simple, <em>Transparent</em> Pricing
+                        </h2>
+                        <div class="rule c"/>
+                        <p style="color: #6b7a5e;font-size:0.93rem;">Demo pricing intro. Replace with your actual
+                            description of what's included in each plan. Cancel anytime.
+                        </p>
+                    </div>
+                    <div class="pgrid2">
+                        <t t-foreach="plans" t-as="plan">
+                            <div class="plan position-relative" t-if="plan.product_id">
+                                <!--                                <div class="pbadge"-->
+                                <!--                                     t-if="plan.price &gt; 0">-->
+                                <!--                                    MOST POPULAR-->
+                                <!--                                </div>-->
+                                <div class="pname">
+                                    <t t-esc="plan.name"/>
+                                </div>
+                                <div class="pprice">
+                                    <sup>$</sup>
+                                    <t t-esc="int(plan.price)"/>
+                                </div>
+                                <div class="pcycle">
+                                    <t t-if="plan.price == 0">
+                                        Forever Free
+                                    </t>
+                                    <t t-else="">
+                                        Per
+                                        <t t-if="plan.renewal_period == 'days'">
+                                            Day
+                                        </t>
+                                        <t t-elif="plan.renewal_period == 'weeks'">
+                                            Week
+                                        </t>
+                                        <t t-elif="plan.renewal_period == 'months'">
+                                            Month
+                                        </t>
+                                        <t t-elif="plan.renewal_period == 'years'">
+                                            Year
+                                        </t>
+                                    </t>
+
+                                </div>
+
+                                <div class="prule"/>
+                                <ul class="pfeats">
+                                    <t t-foreach="plan.feature_ids" t-as="feature">
+                                        <li t-att-class="feature.is_available and '' or 'no'">
+                                            <t t-esc="feature.name"/>
+                                        </li>
+                                    </t>
+                                </ul>
+                                <div class="mt-auto">
+                                    <t t-if="is_public">
+                                        <a href="/web/login" class="btn btn-white-border w-100 text-center">
+                                            Subscribe
+                                        </a>
+                                    </t>
+                                    <t t-else="">
+                                        <t t-set="is_current" t-value="current_plan_id and plan.id == current_plan_id"/>
+                                        <t t-if="is_current">
+                                            <button class="btn btn-white-border w-100" disabled="disabled">
+                                                Subscribe
+                                            </button>
+                                        </t>
+
+                                        <t t-else="">
+                                            <t t-set="current_amount" t-value="float(amount or 0.0)"/>
+
+                                            <form action="/shop/cart/update" method="post">
+                                                <input type="hidden" name="csrf_token"
+                                                       t-att-value="request.csrf_token()"/>
+
+                                                <input type="hidden" name="product_id"
+                                                       t-att-value="plan.product_id.id"/>
+
+                                                <input type="hidden" name="add_qty" value="1"/>
+
+                                                <button type="submit" class="btn btn-gold-border w-100">
+
+                                                    <t t-if="float(plan.price) &gt; current_amount">
+                                                        Upgrade Plan
+                                                    </t>
+
+                                                    <t t-elif="float(plan.price) &lt; current_amount">
+                                                        Downgrade Plan
+                                                    </t>
+
+                                                    <t t-else="">
+                                                        Subscribe
+                                                    </t>
+
+                                                </button>
+                                            </form>
+                                        </t>
+                                    </t>
+                                </div>
+                            </div>
+                        </t>
+                    </div>
+                    <div class="intl rev vis">
+                        <span style="font-size:1.3rem;">🌍</span>
+                        <div>
+                            <strong>International Members:</strong>
+                            Demo international pricing text. Replace with your actual pricing for international regions
+                            and currencies.
+                        </div>
+                    </div>
+                </section>
+                <section id="verify" class="verify">
+                    <div class="vinner">
+                        <div class="sl" style="color:#d3aa39;">Build Trust Instantly</div>
+                        <h2 class="st lt" style="font-size:1.95rem;">Get Your <em>Verified</em> Badge
+                        </h2>
+                        <div class="vbadge">✓ Identity Verified Member</div>
+                        <p>Demo verification description. Replace with your actual explanation of the verification
+                            process, its benefits, and how members' data is protected.
+                        </p>
+                        <a href="/" class="btn btn-gold-border">Get Verified — ₹499 One-Time</a>
+                        <p class="vprice">Free with Platinum membership</p>
+                    </div>
+                </section>
+                <section id="courses" class="courses">
+                    <div style="max-width:1100px;margin:0 auto;">
+                        <div class="sl" style="color:#d3aa39;">Education</div>
+                        <h2 class="st lt">Learn the
+                            <em>Foundations</em>
+                        </h2>
+                        <div class="rule"/>
+                        <p style="color:rgba(255,255,255,0.38);max-width:500px;margin-bottom:2.2rem;font-size:0.88rem;">
+                            Demo courses intro. Replace with your actual description of the course offerings, format,
+                            and access policy.
+                        </p>
+                        <div class="ccgrid" id="ccgrid">
+                            <div class="ccard rev vis">
+                                <div class="cthumb ct1">📚</div>
+                                <div class="cbody">
+                                    <div class="clevel">Beginner · 6 Modules</div>
+                                    <h4>Demo Course One Title</h4>
+                                    <p>Demo course one description. Replace with your actual course overview and what
+                                        students will learn.
+                                    </p>
+                                    <div class="cfoot">
+                                        <div class="cprice">₹999
+                                            <span>one-time</span>
+                                        </div>
+                                        <br/>
+                                        <button class="cenrol">Enrol</button>
+                                    </div>
+                                    <div class="cref">✓ Demo reference or endorsement</div>
+                                </div>
+                            </div>
+                            <div class="ccard rev vis">
+                                <div class="cthumb ct2">⏳</div>
+                                <div class="cbody">
+                                    <div class="clevel">Intermediate · 4 Modules</div>
+                                    <h4>Demo Course Two Title</h4>
+                                    <p>Demo course two description. Replace with your actual course overview and what
+                                        students will learn.
+                                    </p>
+                                    <div class="cfoot">
+                                        <div class="cprice">₹799
+                                            <span>one-time</span>
+                                        </div>
+                                        <br/>
+                                        <button class="cenrol">Enrol</button>
+                                    </div>
+                                    <div class="cref">✓ Demo reference or endorsement</div>
+                                </div>
+                            </div>
+                            <div class="ccard rev vis">
+                                <div class="cthumb ct3">🗣️</div>
+                                <div class="cbody">
+                                    <div class="clevel">Practical · 3 Modules</div>
+                                    <h4>Demo Course Three Title</h4>
+                                    <p>Demo course three description. Replace with your actual course overview and what
+                                        students will learn.
+                                    </p>
+                                    <div class="cfoot">
+                                        <div class="cprice">₹699
+                                            <span>one-time</span>
+                                        </div>
+                                        <br/>
+                                        <button class="cenrol">Enrol</button>
+                                    </div>
+                                    <div class="cref">✓ Demo reference or endorsement</div>
+                                </div>
+                            </div>
+                            <div class="ccard rev vis">
+                                <div class="cthumb ct4">⚖️</div>
+                                <div class="cbody">
+                                    <div class="clevel">Advanced · 5 Modules</div>
+                                    <h4>Demo Course Four Title</h4>
+                                    <p>Demo course four description. Replace with your actual course overview and what
+                                        students will learn.
+                                    </p>
+                                    <div class="cfoot">
+                                        <div class="cprice">₹1,299
+                                            <span>one-time</span>
+                                        </div>
+                                        <br/>
+                                        <button class="cenrol">Enrol</button>
+                                    </div>
+                                    <div class="cref">✓ Demo reference or endorsement</div>
+                                </div>
+                            </div>
+                        </div>
+                        <p style="color:rgba(255,255,255,0.2);font-size:0.78rem;margin-top:1.3rem;">Demo footnote.
+                            Replace with your actual note about course access for premium members or downloadable
+                            content.
+                        </p>
+                    </div>
+                </section>
+                <section id="consult" class="consult">
+                    <div class="consult-wrap">
+                        <div class="cleft">
+                            <div class="sl">Personal Guidance</div>
+                            <h2 class="st">Book a
+                                <em>Scholar</em>
+                            </h2>
+                            <div class="rule"/>
+                            <p>Demo description for the consultation section. Explain what types of questions can be
+                                addressed, who the scholars are, and how sessions are conducted.
+                            </p>
+                            <p>Demo second paragraph. Mention the platform fee and session formats available to users.
+                            </p>
+                            <div class="schols">
+                                <div class="schol">
+                                    <div class="sav">ع</div>
+                                    <div>
+                                        <div class="sname">Demo Scholar One</div>
+                                        <div class="sdesc">Demo qualification · Demo speciality · Languages</div>
+                                    </div>
+                                    <div class="sprice">₹800</div>
+                                </div>
+                                <div class="schol">
+                                    <div class="sav">م</div>
+                                    <div>
+                                        <div class="sname">Demo Scholar Two</div>
+                                        <div class="sdesc">Demo qualification · Demo speciality · Languages</div>
+                                    </div>
+                                    <div class="sprice">₹600</div>
+                                </div>
+                                <div class="schol">
+                                    <div class="sav">ز</div>
+                                    <div>
+                                        <div class="sname">Demo Scholar Three</div>
+                                        <div class="sdesc">Demo qualification · Demo speciality · Languages</div>
+                                    </div>
+                                    <div class="sprice">₹700</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cright">
+                            <h4>Book a Session</h4>
+                            <div class="cf">
+                                <input type="text" placeholder="Your name"/>
+                                <input type="email" placeholder="Email address"/>
+                                <select>
+                                    <option value="">Select Scholar</option>
+                                    <option>Demo Scholar One — ₹800</option>
+                                    <option>Demo Scholar Two — ₹600</option>
+                                    <option>Demo Scholar Three — ₹700</option>
+                                </select>
+                                <select>
+                                    <option value="">Session Format</option>
+                                    <option>30-min Video Call</option>
+                                    <option>Written Q&amp;A (24hr response)</option>
+                                </select>
+                                <select>
+                                    <option value="">Topic Area</option>
+                                    <option>Demo Topic One</option>
+                                    <option>Demo Topic Two</option>
+                                    <option>Demo Topic Three</option>
+                                    <option>Other question</option>
+                                </select>
+                                <textarea
+                                        placeholder="Briefly describe your question or situation (strictly confidential)..."/>
+                                <div class="cfee">
+                                    <span>Platform fee included</span>
+                                    <strong>₹600 – ₹800</strong>
+                                </div>
+                                <button class="btn btn-gold">
+                                    Request Booking
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section id="adab" class="adab">
+                    <div class="sl">Etiquette</div>
+                    <h2 class="st">The <em>Adab</em> Section
+                    </h2>
+                    <div class="rule"/>
+                    <p style="color: #6b7a5e;max-width:520px;margin-bottom:2.3rem;font-size:0.93rem;">Demo intro for the
+                        Adab section. Replace with your actual description of the etiquette and principles that users
+                        should follow on this platform.
+                    </p>
+                    <div class="alist">
+                        <div class="aitem rev vis">
+                            <div class="an">1</div>
+                            <div class="abody">
+                                <h4>Principle One — Title</h4>
+                                <p>Demo description for principle one. Replace with your actual etiquette guideline and
+                                    its explanation.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="aitem rev vis">
+                            <div class="an">2</div>
+                            <div class="abody">
+                                <h4>Principle Two — Title</h4>
+                                <p>Demo description for principle two. Replace with your actual etiquette guideline and
+                                    its explanation.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="aitem rev vis">
+                            <div class="an">3</div>
+                            <div class="abody">
+                                <h4>Principle Three — Title</h4>
+                                <p>Demo description for principle three. Replace with your actual etiquette guideline
+                                    and its explanation.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="aitem rev vis">
+                            <div class="an">4</div>
+                            <div class="abody">
+                                <h4>Principle Four — Title</h4>
+                                <p>Demo description for principle four. Replace with your actual etiquette guideline and
+                                    its explanation.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="aitem rev vis">
+                            <div class="an">5</div>
+                            <div class="abody">
+                                <h4>Principle Five — Title</h4>
+                                <p>Demo description for principle five. Replace with your actual etiquette guideline and
+                                    its explanation.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="aitem rev vis">
+                            <div class="an">6</div>
+                            <div class="abody">
+                                <h4>Principle Six — Title</h4>
+                                <p>Demo description for principle six. Replace with your actual etiquette guideline and
+                                    its explanation.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </xpath>
+    </template>
+
+</odoo>
