@@ -1,0 +1,336 @@
+/* =========================================
+   REQUEST PAGE — DEDICATED STYLES
+   File: requestpage_css.css
+   ========================================= */
+
+/* ---- GRID ---- */
+
+.req-grid {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 1.5rem !important;
+    width: 100% !important;
+}
+
+/* ---- CARD ---- */
+/* match-card already has base styles from style.scss.
+   These ensure cards fill their grid cell properly. */
+
+.req-grid .match-card {
+    width: 100% !important;
+    min-width: 0 !important;       /* stops grid blowout */
+    box-sizing: border-box !important;
+}
+
+/* ---- ACTIONS inside card ---- */
+
+.req-actions {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.6rem !important;
+    margin-top: 1.2rem !important;
+    width: 100% !important;
+}
+
+.req-actions .match-btn {
+    width: 100% !important;
+    text-align: center !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+/* ---- DECLINE BUTTON ---- */
+
+.req-reject-btn {
+    height: 46px !important;
+    border: 1px solid rgba(239, 68, 68, 0.25) !important;
+    background: rgba(239, 68, 68, 0.07) !important;
+    color: #fca5a5 !important;
+    text-decoration: none !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: background 0.25s ease, border-color 0.25s ease !important;
+    font-size: 0.85rem !important;
+}
+
+.req-reject-btn:hover {
+    border-color: rgba(239, 68, 68, 0.6) !important;
+    background: rgba(239, 68, 68, 0.14) !important;
+    color: #fca5a5 !important;
+    text-decoration: none !important;
+}
+
+/* ---- EMPTY STATE ---- */
+
+.req-empty {
+    text-align: center !important;
+    padding: 5rem 2rem !important;
+    border: 1px solid rgba(196, 154, 46, 0.12) !important;
+    background: rgba(255, 255, 255, 0.02) !important;
+    width: 100% !important;
+}
+
+.req-empty-title {
+    color: #fff !important;
+    font-size: 1.1rem !important;
+    margin-bottom: 0.5rem !important;
+}
+
+.req-empty-sub {
+    color: rgba(255, 255, 255, 0.4) !important;
+    font-size: 0.85rem !important;
+}
+
+/* =========================================
+   RESPONSIVE BREAKPOINTS
+   ========================================= */
+
+/* Large desktop — 4 columns */
+@media (min-width: 1281px) {
+    .req-grid {
+        grid-template-columns: repeat(4, 1fr) !important;
+    }
+}
+
+/* iPad Pro landscape / small desktop (1025px – 1280px) — 3 columns */
+@media (max-width: 1280px) and (min-width: 1025px) {
+    .req-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+}
+
+/* iPad Pro portrait / iPad landscape (769px – 1024px) — 3 columns */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .req-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+}
+
+/* iPad Mini / small tablets (481px – 768px) — 2 columns */
+@media (max-width: 768px) and (min-width: 481px) {
+    .req-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+/* Mobile (480px and below) — 1 column */
+@media (max-width: 480px) {
+    .req-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+    }
+}
+
+
+
+/* =========================================
+   KYC VERIFICATION PENDING PAGE
+   ========================================= */
+
+/* Outer card — wider than estate-card to fit tracker */
+.kyc-card {
+    text-align: center;
+    max-width: 520px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+}
+
+/* Icon circle */
+.kyc-icon-wrap {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    border: 2px solid rgba(196, 154, 46, 0.45);
+    background: rgba(196, 154, 46, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+}
+
+.kyc-icon {
+    font-size: 1.8rem;
+    line-height: 1;
+}
+
+/* Gold pill badge */
+.kyc-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.3rem 1rem;
+    border: 1px solid rgba(196, 154, 46, 0.5);
+    color: #c49a2e;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    border-radius: 999px;
+    margin-bottom: 1.1rem;
+}
+
+/* Override estate-title / estate-sub spacing */
+.kyc-card .estate-title {
+    margin-bottom: 0.6rem;
+}
+
+.kyc-card .estate-sub {
+    margin-bottom: 1.75rem;
+    max-width: 380px;
+}
+
+/* ---- Tracker ---- */
+.kyc-tracker {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 6px;
+    padding: 1.5rem 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.kyc-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    position: relative;
+}
+
+/* Vertical connector line between steps */
+.kyc-step-line {
+    position: absolute;
+    left: 13px;
+    top: 26px;
+    width: 2px;
+    height: 28px;
+}
+
+.kyc-line-done {
+    background: #c49a2e;
+}
+
+.kyc-line-pending {
+    background: rgba(196, 154, 46, 0.25);
+}
+
+.kyc-line-hidden {
+    display: none;
+}
+
+/* Add bottom padding to steps that have a line below */
+.kyc-done {
+    padding-bottom: 1.5rem;
+}
+
+/* Step dot */
+.kyc-step-dot {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1px;
+}
+
+.kyc-dot-done {
+    background: #c49a2e;
+    color: #0e1510;
+    font-size: 0.7rem;
+}
+
+.kyc-dot-pending {
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Step labels */
+.kyc-step-label {
+    color: #ffffff;
+    font-size: 0.88rem;
+    font-weight: 500;
+    display: block;
+    line-height: 1.4;
+    margin-top: 3px;
+}
+
+.kyc-label-muted {
+    color: rgba(255, 255, 255, 0.45) !important;
+}
+
+.kyc-step-sub {
+    display: block;
+    font-size: 0.75rem;
+    color: rgba(196, 154, 46, 0.7);
+    margin-top: 2px;
+}
+
+/* ---- Note box ---- */
+.kyc-note {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 4px;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.45);
+    text-align: left;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    margin-bottom: 1.75rem;
+    line-height: 1.5;
+}
+
+.kyc-note-icon {
+    color: rgba(196, 154, 46, 0.6);
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+/* ---- CTA button — wider than default ---- */
+.kyc-cta {
+    min-width: 220px;
+    letter-spacing: 0.1em;
+}
+ /* Remove global container padding from the chat page */
+.chat-wrapper .container-fluid {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+}
+
+/* Ensure the header doesn't push the chat down further */
+.custom-header {
+    padding-bottom: 0 !important;
+}
+
+
+/* Modern Locked Button State */
+.btn-locked {
+    opacity: 0.6 !important;
+    cursor: not-allowed !important;
+    pointer-events: none !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    color: rgba(255, 255, 255, 0.4) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.5rem !important;
+}
+.btn-locked i {
+    font-size: 0.8rem;
+}
+
+.btn:disabled{
+    color: black !important;
+}

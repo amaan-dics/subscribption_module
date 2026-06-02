@@ -33,6 +33,7 @@
             'subscription_package_extended/static/src/js/chat.js',
             'subscription_package_extended/static/src/scss/style.scss',
             'subscription_package_extended/static/src/scss/chat.scss',
+            'subscription_package_extended/static/src/scss/request.css',
         ],
     },
     'license': 'LGPL-3',
