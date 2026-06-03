@@ -2201,7 +2201,7 @@ nav {
     }
 }
 
-@media (max-width: 991px) {
+@media (max-width: 1025px) {
     .custom-nav {
         height: 70px;
         padding: 0 1rem;
@@ -2475,7 +2475,7 @@ nav {
     color: #fca5a5;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .match-page {
         padding: 2rem 1rem 4rem;
     }
@@ -2660,3 +2660,7 @@ nav {
 body {
     color: #c49a2e;
 }
+
+
+
+

@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <template id="chatbox_template" name="Chat Box">
         <t t-call="website.layout">
+            <t t-set="no_footer" t-value="True"/>
             <div class="chat-wrapper position-relative">
                 <div class="container-fluid p-0 h-100">
                     <div class="row g-0 chat-container h-100">
@@ -29,7 +29,7 @@
                                             <img t-if="p.image_128"
                                                  t-att-src="'/web/image/res.partner/%s/image_128' % p.id"
                                                  class="chat-avatar"/>
-                                            <div class="status-dot online"/>
+
                                         </div>
                                         <div class="contact-info flex-grow-1 overflow-hidden">
                                             <div class="d-flex justify-content-between align-items-center">
@@ -64,38 +64,24 @@
                                                 <img t-if="p.image_128"
                                                      t-att-src="'/web/image/res.partner/%s/image_128' % p.id"
                                                      class="chat-avatar"/>
-                                                <div class="status-dot online"/>
+
                                             </div>
                                             <div class="d-flex flex-column overflow-hidden">
                                                 <span class="contact-name-large text-truncate">
                                                     <t t-esc="p.name"/>
                                                 </span>
-                                                <span class="contact-status-text">Online · Member</span>
+
                                             </div>
                                         </div>
                                     </t>
                                 </div>
-                                <div class="chat-header-actions flex-shrink-0 ms-2 position-relative">
-                                    <button type="button" class="chat-menu-btn" id="chat_menu_btn">
-                                        <i class="fa fa-ellipsis-v"/>
+                                <div class="chat-header-actions flex-shrink-0 ms-2">
+                                    <button type="button" class="" id="block_user_btn"
+                                            data-id=""
+                                            style="height: 50px; width: 50px; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;">
+                                        <img t-att-src="'/subscription_package_extended/static/src/block_user.png'"
+                                             class="img-fluid"/>
                                     </button>
-
-                                    <div class="chat-menu-dropdown d-none" id="chat_menu_dropdown">
-                                        <button type="button" class="chat-menu-item" id="mute_user_btn">
-                                            <i class="fa fa-bell-slash me-2"/>
-                                            Mute User
-                                        </button>
-
-                                        <button type="button" class="chat-menu-item" id="clear_chat_btn">
-                                            <i class="fa fa-trash me-2"/>
-                                            Clear Chat
-                                        </button>
-
-                                        <button type="button" class="chat-menu-item" id="block_user_btn">
-                                            <i class="fa fa-ban me-2"/>
-                                            Block User
-                                        </button>
-                                    </div>
                                 </div>
                             </div>
                             <div class="adab-banner flex-shrink-0">
@@ -118,6 +104,7 @@
                     </div>
                 </div>
             </div>
+
         </t>
     </template>
     <template id="no_plan_template" name="No Subscription Plan">
@@ -170,4 +157,65 @@
             </li>
         </xpath>
     </template>
+
+    <template id="kyc_pending_template" name="KYC Verification Pending">
+        <t t-call="website.layout">
+            <div class="estate-screen">
+                <div class="kyc-card">
+
+                    <!-- Icon -->
+                    <div class="kyc-icon-wrap">
+                        <span class="kyc-icon">&#x1F4CB;</span>
+                    </div>
+
+                    <!-- Badge -->
+                    <div class="kyc-badge">VERIFICATION IN PROGRESS</div>
+
+                    <!-- Title & Sub -->
+                    <h2 class="estate-title">KYC Verification Pending</h2>
+                    <p class="estate-sub">
+                        Your identity is being reviewed by our team. Chat will be unlocked
+                        once your verification is approved. This usually takes 1–2 business days.
+                    </p>
+
+                    <!-- Progress Tracker -->
+                    <div class="kyc-tracker">
+                        <div class="kyc-step kyc-done">
+                            <div class="kyc-step-dot kyc-dot-done">
+                                <i class="fa fa-check"/>
+                            </div>
+                            <div class="kyc-step-line kyc-line-done"/>
+                            <span class="kyc-step-label">Identity Submitted</span>
+                        </div>
+                        <div class="kyc-step kyc-done">
+                            <div class="kyc-step-dot kyc-dot-done">
+                                <i class="fa fa-check"/>
+                            </div>
+                            <div class="kyc-step-line kyc-line-pending"/>
+                            <span class="kyc-step-label">Under Review</span>
+                        </div>
+                        <div class="kyc-step kyc-pending">
+                            <div class="kyc-step-dot kyc-dot-pending"/>
+                            <div class="kyc-step-line kyc-line-hidden"/>
+                            <div>
+                                <span class="kyc-step-label kyc-label-muted">Verification Complete</span>
+                                <span class="kyc-step-sub">Currently processing...</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Note -->
+                    <div class="kyc-note">
+                        <i class="fa fa-circle-o kyc-note-icon"/>
+                        If you haven&#x27;t submitted your documents yet, please complete your
+                        profile verification to proceed.
+                    </div>
+
+
+
+                </div>
+            </div>
+        </t>
+    </template>
+
 </odoo>

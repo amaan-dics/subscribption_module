@@ -125,7 +125,10 @@ h1.o_wsale_cart_title {
 .o_wsale_product_quantity .btn:hover {
     background: rgba(196, 154, 46, 0.25) !important;
     color: #e0b84a !important;
+
 }
+
+
 
 /* Price */
 .oe_currency_value,
@@ -812,7 +815,7 @@ a {
 
 .form-control:focus {
     box-shadow: 0 0 0 0.25rem transparent;
-    border: #c49a2e;
+    /*border: #c49a2e;*/
 }
 
 
@@ -868,4 +871,17 @@ a {
 
 .form-select {
     border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .match-grid {
+        /* Forces the container into exactly two columns */
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1.5rem !important;
+    }
+}
+
+.btn:focus {
+    border-color: #ffffff1f;
 }

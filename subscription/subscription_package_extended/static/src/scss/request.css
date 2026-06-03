@@ -5,22 +5,22 @@
 
 /* ---- GRID ---- */
 
-.req-grid {
-    display: grid !important;
-    grid-template-columns: repeat(4, 1fr) !important;
-    gap: 1.5rem !important;
-    width: 100% !important;
-}
+/*.req-grid {*/
+/*    display: grid !important;*/
+/*    grid-template-columns: repeat(4, 1fr) !important;*/
+/*    gap: 1.5rem !important;*/
+/*    width: 100% !important;*/
+/*}*/
 
 /* ---- CARD ---- */
 /* match-card already has base styles from style.scss.
    These ensure cards fill their grid cell properly. */
 
-.req-grid .match-card {
-    width: 100% !important;
-    min-width: 0 !important;       /* stops grid blowout */
-    box-sizing: border-box !important;
-}
+/*.req-grid .match-card {*/
+/*    width: 100% !important;*/
+/*    min-width: 0 !important;       !* stops grid blowout *!*/
+/*    box-sizing: border-box !important;*/
+/*}*/
 
 /* ---- ACTIONS inside card ---- */
 
@@ -88,40 +88,40 @@
    ========================================= */
 
 /* Large desktop — 4 columns */
-@media (min-width: 1281px) {
-    .req-grid {
-        grid-template-columns: repeat(4, 1fr) !important;
-    }
-}
+/*@media (min-width: 1281px) {*/
+/*    .req-grid {*/
+/*        grid-template-columns: repeat(4, 1fr) !important;*/
+/*    }*/
+/*}*/
 
 /* iPad Pro landscape / small desktop (1025px – 1280px) — 3 columns */
-@media (max-width: 1280px) and (min-width: 1025px) {
-    .req-grid {
-        grid-template-columns: repeat(3, 1fr) !important;
-    }
-}
+/*@media (max-width: 1280px) and (min-width: 1025px) {*/
+/*    .req-grid {*/
+/*        grid-template-columns: repeat(3, 1fr) !important;*/
+/*    }*/
+/*}*/
 
-/* iPad Pro portrait / iPad landscape (769px – 1024px) — 3 columns */
-@media (max-width: 1024px) and (min-width: 769px) {
-    .req-grid {
-        grid-template-columns: repeat(3, 1fr) !important;
-    }
-}
+/* iPad Pro portrait / iPad landscape (769px – 1024px) — 2 columns */
+/*@media (max-width: 1024px) and (min-width: 769px) {*/
+/*    .req-grid {*/
+/*        grid-template-columns: repeat(3, 1fr) !important;*/
+/*    }*/
+/*}*/
 
 /* iPad Mini / small tablets (481px – 768px) — 2 columns */
-@media (max-width: 768px) and (min-width: 481px) {
-    .req-grid {
-        grid-template-columns: repeat(2, 1fr) !important;
-    }
-}
+/*@media (max-width: 768px) and (min-width: 481px) {*/
+/*    .req-grid {*/
+/*        grid-template-columns: repeat(2, 1fr) !important;*/
+/*    }*/
+/*}*/
 
 /* Mobile (480px and below) — 1 column */
-@media (max-width: 480px) {
-    .req-grid {
-        grid-template-columns: 1fr !important;
-        gap: 1rem !important;
-    }
-}
+/*@media (max-width: 480px) {*/
+/*    .req-grid {*/
+/*        grid-template-columns: 1fr !important;*/
+/*        gap: 1rem !important;*/
+/*    }*/
+/*}*/
 
 
 
@@ -333,4 +333,43 @@
 
 .btn:disabled{
     color: black !important;
+}
+
+
+/* ---- REQ-GRID RESPONSIVE ---- */
+.req-grid {
+    display: grid !important;
+    gap: 1.5rem !important;
+    width: 100% !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+}
+
+/* Medium screens — 3 columns (tablets, iPad) */
+@media (max-width: 1024px) {
+    .req-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+}
+@media (min-width: 768px) and (max-width: 1023px){
+    .req-grid {
+        /* Forces the container into exactly two columns */
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1.5rem !important;
+    }
+}
+
+/* Small tablets — 2 columns */
+@media (max-width: 768px) {
+    .req-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+/* Mobile — 1 column */
+@media (max-width: 480px) {
+    .req-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+    }
 }

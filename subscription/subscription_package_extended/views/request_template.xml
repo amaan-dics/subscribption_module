@@ -26,7 +26,7 @@
                         <div class="req-grid">
                             <t t-foreach="requests" t-as="req">
                                 <div class="match-card">
-                                    <div class="online-dot"/>
+
                                     <div class="avatar-wrap">
                                         <img t-att-src="'/web/image/res.partner/%s/image_1920' % req.from_user_id.id"
                                              class="member-avatar"/>

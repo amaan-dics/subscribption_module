@@ -18,6 +18,7 @@
     'assets': {
         'web.assets_frontend': [
             'subscription_package_website/static/src/scss/style.scss',
+            'subscription_package_website/static/src/scss/shop_theme.css',
         ],
     },
     'license': 'LGPL-3',

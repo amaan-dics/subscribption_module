@@ -28,19 +28,15 @@
                                     </p>
                                     <t t-if="user.kyc_status == 'approved'">
                                         <t t-if="connection_limit_reached">
-                                            <span class="badge bg-danger">Connection Limit Reached</span>
+                                            <button class="match-btn btn-locked" disabled="disabled">
+                                                <i class="fa fa-lock"/>
+                                                Limit Reached
+                                            </button>
                                         </t>
                                         <t t-elif="not req">
-                                            <a t-att-href="'/send_request/%s' % user.id"
-                                               class="btn btn-primary btn-sm" t-if="not connection_limit_reached">
+                                            <a t-att-href="'/send_request/%s' % user.id" class="match-btn gold-btn">
                                                 Connect
                                             </a>
-                                            <div class="mt-2 small text-muted" t-if="connection_limit_reached">
-                                                Connections Limit Reached:
-                                                <t t-esc="current_user.connection_used"/>
-                                                /
-                                                <t t-esc="int(plan.connection_limit)"/>
-                                            </div>
                                         </t>
                                         <t t-elif="req.state == 'pending'">
                                             <span class="badge bg-info">Request Sent</span>
