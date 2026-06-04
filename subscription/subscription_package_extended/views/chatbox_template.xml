@@ -84,13 +84,20 @@
                                     </button>
                                 </div>
                             </div>
-                            <div class="adab-banner flex-shrink-0">
-                                <i class="fa fa-info-circle"/>
-                                Please maintain Islamic adab in all communications. Discussions should involve your wali
-                                when appropriate.
-                            </div>
+
                             <div id="chat-box" class="chat-messages-box flex-grow-1"></div>
-                            <div class="chat-input-area d-flex align-items-center flex-shrink-0">
+                            <div class="chat-input-area d-flex align-items-center flex-shrink-0"
+                                 style="position:relative;">
+                                <!-- Emoji Picker Trigger -->
+                                <button id="emoji_btn" type="button" title="Insert emoji">
+                                    <i class="fa fa-smile-o"/>
+                                </button>
+                                <!-- Emoji Panel — populated by chat.js -->
+                                <div id="emoji_panel"
+                                     style="display:none; position:absolute; bottom:70px; left:0; width:320px; background:#111c14; border:1px solid rgba(196,154,46,0.25); border-radius:6px; padding:0.75rem; z-index:9999; box-shadow:0 8px 32px rgba(0,0,0,0.5);">
+                                    <div id="emoji_grid"
+                                         style="display:flex; flex-wrap:wrap; gap:4px; max-height:200px; overflow-y:auto;"/>
+                                </div>
                                 <div class="input-wrapper flex-grow-1 d-flex align-items-center">
                                     <input type="text" id="msg_input" class="chat-input w-100"
                                            placeholder="Type your message with care and respect..."
@@ -210,7 +217,6 @@
                         If you haven&#x27;t submitted your documents yet, please complete your
                         profile verification to proceed.
                     </div>
-
 
 
                 </div>

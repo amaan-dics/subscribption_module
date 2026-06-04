@@ -885,3 +885,9 @@ a {
 .btn:focus {
     border-color: #ffffff1f;
 }
+
+@media (max-width: 991.98px) {
+    .o_website_sale_checkout .o_total_card .card-body, .o_website_sale_checkout .o_total_card .accordion-item, .o_website_sale_checkout .o_total_card .accordion-button {
+        background-color: #0e1510 !important;
+    }
+}

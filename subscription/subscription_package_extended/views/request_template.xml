@@ -48,9 +48,21 @@
                                         </div>
                                         <div class="member-bio">Wants to connect with you.</div>
                                         <div class="match-actions req-actions">
-                                            <a t-att-href="'/accept_request/%s' % req.id" class="match-btn gold-btn">
-                                                Accept
-                                            </a>
+
+                                            <!-- REPLACE the plain Accept <a> with this conditional -->
+                                            <t t-if="connection_limit_reached">
+                                                <button class="match-btn btn-locked" disabled="disabled">
+                                                    <i class="fa fa-lock"/>
+                                                    Limit Reached
+                                                </button>
+                                            </t>
+                                            <t t-else="">
+                                                <a t-att-href="'/accept_request/%s' % req.id"
+                                                   class="match-btn gold-btn">
+                                                    Accept
+                                                </a>
+                                            </t>
+
                                             <a t-att-href="'/reject_request/%s' % req.id"
                                                class="match-btn req-reject-btn">Decline
                                             </a>

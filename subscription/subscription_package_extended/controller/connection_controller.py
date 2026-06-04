@@ -3,6 +3,44 @@ from odoo import http, fields
 from odoo.http import request
 from markupsafe import escape
 
+# =============================================================
+# CONNECTION_CONTROLLER.PY — CHANGELOG  (for merge reference)
+# =============================================================
+#
+# [CHANGE 1] _check_and_sync_subscription — FREE PLAN AUTO-ASSIGN
+#   - Previously returned False when no active subscription, blocking all pages
+#   - Now auto-assigns a price=0 plan so free/trial users can access the site
+#   - Location: SubscriptionMixin._check_and_sync_subscription()
+#
+# [CHANGE 2] get_messages — DATE FIELD ADDED TO RESPONSE
+#   - Previously only returned 'body' and 'is_me' — no date
+#   - Missing date was the root cause of all messages showing "Sent" as timestamp
+#   - Now returns 'date': m.date.strftime('%Y-%m-%d %H:%M:%S')
+#   - Location: ConnectController.get_messages()
+#
+# [CHANGE 3] get_messages — CHAT LIMIT ENFORCEMENT + DOWNGRADE SUPPORT
+#   - Added chat_limit_reached flag to response
+#   - Ranks existing chats by creation date; after downgrade, chats beyond
+#     the new limit are blocked. New chats blocked when chats_used >= chat_limit
+#   - Location: ConnectController.get_messages()
+#
+# [CHANGE 4] chatbox route — CHAT LIMIT GATE
+#   - Blocks chatbox entirely ONLY when chat_limit == 0 (e.g. free/trial plan)
+#   - Plans with chat_limit > 0 enter chatbox freely; per-chat limit via JS popup
+#   - Location: ConnectController.chatbox()
+#
+# [CHANGE 5] my_requests route — CONNECTION LIMIT PASSED TO TEMPLATE
+#   - Passes connection_limit_reached boolean to request_template
+#   - Template uses it to disable/lock Accept buttons when limit is reached
+#   - Location: ConnectController.my_requests()
+#
+# [CHANGE 6] ChatTermsController.send_message — CHAT LIMIT HARD BLOCK
+#   - Blocks /chat/send when chat_limit == 0 (prevents direct API bypass)
+#   - Does NOT block when limit > 0 — that is handled per-chat via JS popup
+#   - Location: ChatTermsController.send_message()
+#
+# =============================================================
+
 
 class SubscriptionMixin:
 
@@ -15,6 +53,16 @@ class SubscriptionMixin:
                 partner.sudo().write({'subscription_plan_id': active_subscription.plan_id.id})
             return True
         else:
+            # [CHANGE 1] Auto-assign free/trial plan (price=0) so users always have a plan context.
+            # Previously this returned False and blocked all protected pages for unsubscribed users.
+            free_plan = request.env['subscription.package.plan'].sudo().search(
+                [('price', '=', 0)], limit=1
+            )
+            if free_plan:
+                if partner.subscription_plan_id != free_plan:
+                    partner.sudo().write({'subscription_plan_id': free_plan.id})
+                return True
+            # No free plan configured — clear plan and block access
             if partner.subscription_plan_id:
                 partner.sudo().write({'subscription_plan_id': False})
             return False
@@ -93,18 +141,53 @@ class ConnectController(http.Controller, SubscriptionMixin):
                                                                 ('channel_partner_ids', 'in', [target.id])], limit=1)
         requiest_id = request.env['connect.request'].sudo().search([('to_user_id', '=', current.id),
                                                                     ('from_user_id', '=', int(user_id))], limit=1)
+
+        # [CHANGE 3] Determine chat limit and whether this chat is within the allowed slots
+        plan = current.subscription_plan_id
+        chat_limit = plan.chat_limit if plan else 0
+        all_channels = request.env['discuss.channel'].sudo().search([
+            ('channel_type', '=', 'chat'),
+            ('channel_partner_ids', 'in', [current.id])
+        ])
+        # Rank existing chat partners oldest-first so downgraded users keep their earliest chats
+        all_channels_sorted = all_channels.sorted(key=lambda c: c.create_date)
+        ranked_partner_ids = []
+        for ch in all_channels_sorted:
+            for p in ch.channel_partner_ids:
+                if p.id != current.id and p.id not in ranked_partner_ids:
+                    ranked_partner_ids.append(p.id)
+        target_uid = int(user_id)
+        is_new_chat = target_uid not in ranked_partner_ids
+        chats_used = len(ranked_partner_ids)
+        if chat_limit > 0 and not is_new_chat and target_uid in ranked_partner_ids:
+            position = ranked_partner_ids.index(target_uid) + 1
+            chat_limit_reached = position > chat_limit
+        else:
+            chat_limit_reached = chat_limit > 0 and is_new_chat and chats_used >= chat_limit
+
         if not channel:
-            return {'messages': [], 'channel_archived': False, 'requiest_id_status': False}
+            return {
+                'messages': [],
+                'channel_archived': False,
+                'requiest_id_status': False,
+                'chat_limit_reached': chat_limit_reached,  # [CHANGE 3]
+            }
+
         msgs = channel.message_ids.filtered(lambda m: m.message_type == 'comment')
         result = []
         for m in msgs.sorted(key=lambda x: x.date):
-            result.append({'body': m.body or '', 'is_me': m.author_id.id == current.id})
+            result.append({
+                'body': m.body or '',
+                'is_me': m.author_id.id == current.id,
+                'date': m.date.strftime('%Y-%m-%d %H:%M:%S') if m.date else '',  # [CHANGE 2] was missing — caused "Sent" timestamp bug
+            })
 
         return {
             'messages': result,
             'requiest_id_status': requiest_id.state if requiest_id else False,
             'channel_archived': not channel.active,
             'channel_id': channel.id,
+            'chat_limit_reached': chat_limit_reached,  # [CHANGE 3]
         }
 
     @http.route('/send_request/<int:user_id>', type='http', auth='user', website=True)
@@ -154,7 +237,15 @@ class ConnectController(http.Controller, SubscriptionMixin):
             return request.render('subscription_package_extended.kyc_pending_template')
         requests = request.env['connect.request'].sudo().search(
             [('to_user_id', '=', user.id), ('state', '=', 'pending')])
-        return request.render('subscription_package_extended.request_template', {'requests': requests})
+        # [CHANGE 5] Pass connection_limit_reached so template can lock Accept buttons
+        plan = user.subscription_plan_id
+        connection_limit = plan.connection_limit if plan else 0
+        connection_used = user.connection_used
+        connection_limit_reached = connection_limit > 0 and connection_used >= connection_limit
+        return request.render('subscription_package_extended.request_template', {
+            'requests': requests,
+            'connection_limit_reached': connection_limit_reached,  # [CHANGE 5]
+        })
 
     @http.route('/chatbox', type='http', auth='user', website=True)
     def chatbox(self, user_id=None, **kwargs):
@@ -163,6 +254,10 @@ class ConnectController(http.Controller, SubscriptionMixin):
             return request.render('subscription_package_extended.no_plan_template')
         if current.kyc_status != 'approved':
             return request.render('subscription_package_extended.kyc_pending_template')
+        plan = current.subscription_plan_id
+        chat_limit = plan.chat_limit if plan else 0
+        if chat_limit == 0:
+            return request.render('subscription_package_extended.chat_limit_reached_template')
         partner_ids = set()
         requests_data = request.env['connect.request'].sudo().search([('state', '=', 'accepted'), '|',
                                                                       ('from_user_id', '=', current.id),
@@ -214,6 +309,12 @@ class ChatTermsController(http.Controller):
     @http.route('/chat/send', type='json', auth='user')
     def send_message(self, user_id, message):
         current = request.env.user.partner_id
+        # [CHANGE 6] Hard-block send when plan gives zero chat access (prevents direct API bypass).
+        # Per-chat limit for plans with chat_limit > 0 is handled via JS popup, not here.
+        plan = current.subscription_plan_id
+        chat_limit = plan.chat_limit if plan else 0
+        if chat_limit == 0:
+            return {'status': 'error', 'message': 'Your current plan does not include chat access'}
         accepted = request.env['chat.terms.acceptance'].sudo().search([('user_id', '=', current.id),
                                                                        ('partner_id', '=', int(user_id))], limit=1)
         if not accepted:
